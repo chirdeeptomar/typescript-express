@@ -1,10 +1,12 @@
 var gulp = require("gulp");
-var server = require('gulp-express');
-var ts = require("gulp-typescript");
-var sourcemaps = require("gulp-sourcemaps");
-var tsProject = ts.createProject("tsconfig.json");
-var config = require('./gulp.config.js')();
 var clean = require('gulp-clean');
+var express = require('gulp-express');
+var tsc = require("gulp-typescript");
+var sourcemaps = require("gulp-sourcemaps");
+
+var config = require('./gulp.config.js')();
+
+var project = tsc.createProject("tsconfig.json");
 
 gulp.task('clean', function () {
   return gulp.src('dist/*.*', {read: false})
@@ -20,7 +22,7 @@ gulp.task("default", ['clean'], function () {
     var result = gulp
         .src(source)
         .pipe(sourcemaps.init())
-        .pipe(ts(tsProject));
+        .pipe(tsc(project));
 
     return result.js
         .pipe(sourcemaps.write('.'))
@@ -30,5 +32,5 @@ gulp.task("default", ['clean'], function () {
 
 gulp.task('serve', ['default'], function () {
     // Start the server at the beginning of the task    
-    server.run(['dist/app.js']);
+    express.run(['dist/app.js']);
 });
