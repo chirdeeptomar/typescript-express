@@ -1,0 +1,23 @@
+{
+  "name": "typescript-gulp-template",
+  "version": "1.0.0",
+  "description": "\"tempate for typescript\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chirdeep Tomar",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-express": "^0.3.5",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.13.6",
+    "mocha": "^2.5.3"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "serve-static": "^1.11.1"
+  }
+}
