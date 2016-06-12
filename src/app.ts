@@ -1,10 +1,12 @@
-const express = require('express');
-const app = express();
+namespace main {  
+  const express = require('express');
+  const app = express();
 
-app.get('/', function (req:any, res:any) {
-  res.send('Hello World!');
-});
+  app.get('/', function (req: any, res: any) {
+    res.send('Hello World!');
+  });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-});
+  app.listen(3000, function () {
+    console.log('listening on port 3000!');
+  });
+}
