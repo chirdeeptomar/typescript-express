@@ -1,8 +1,12 @@
-namespace main {  
-  const express = require('express');
-  const app = express();
+'use strict';
 
-  app.get('/', function (req: any, res: any) {
+import * as bodyParser from "body-parser";
+import * as express from "express";
+import * as path from "path";
+
+namespace main {
+  const app = express();
+  app.get('/', function (req: express.Request, res: express.Response) {
     res.send('Hello World!');
   });
 
