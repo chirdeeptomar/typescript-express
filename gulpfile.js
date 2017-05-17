@@ -9,7 +9,7 @@ var config = require('./gulp.config.js')();
 var project = tsc.createProject("tsconfig.json");
 
 gulp.task('clean', function () {
-  return gulp.src('dist/*.*', {read: false})
+  return gulp.src('dist/**', {read: false})
     .pipe(clean());
 });
 
@@ -29,8 +29,10 @@ gulp.task("default", ['clean'], function () {
         .pipe(gulp.dest(config.outputPath));
 });
 
+gulp.task('build', ['default'], function () {
+});
 
 gulp.task('serve', ['default'], function () {
     // Start the server at the beginning of the task    
-    express.run(['dist/app.js']);
+    express.run(['dist/server.js']);
 });
